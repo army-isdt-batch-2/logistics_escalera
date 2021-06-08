@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Distribution;
 use Redirect;
+use App\Models\Asset;
 
 
 class DistributionController extends Controller
@@ -37,7 +38,9 @@ class DistributionController extends Controller
     }
     public function create()
     {
-       return view('create_form.distribution');                
+       return view('create_form.distribution')->with([
+           'asset' => Asset::all()
+       ]);                
 
     }
 

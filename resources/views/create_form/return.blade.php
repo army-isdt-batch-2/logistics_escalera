@@ -18,7 +18,14 @@
                         @csrf
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Asset ID</label>
-                            <input type="number" class="form-control" name="asset_id" required>
+                            <label for="inputState" class="form-label">Status</label>
+                                <select class="form-control" name="asset_id" required>
+
+                                    @foreach($data as $x)
+                                        <option value="{{ $x->id }}">{{ $x->name }}</option> 
+                                    @endforeach
+                                  
+                                </select>
                         </div>
                         <div class="col-md-6"></div>
 

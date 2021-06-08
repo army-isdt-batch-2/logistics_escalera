@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Delivery;
+use App\Models\Distribution;
+use App\Models\Transportation;
 use Redirect;
 
 class DeliveriesController extends Controller
@@ -36,7 +38,10 @@ class DeliveriesController extends Controller
     }
     public function create()
     {
-       return view('create_form.deliveries');                
+       return view('create_form.deliveries')->with([
+        'distribution' => Distribution::all(), 
+        'transportation' => Transportation::all()
+    ]);                
 
     }
 

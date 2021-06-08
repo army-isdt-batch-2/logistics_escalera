@@ -30,6 +30,8 @@
                         <thead>
                             <tr>
                                 <th class="text-muted" scope="col">#</th>
+                                <th class="text-muted" scope="col">Distribution</th>
+                                <th class="text-muted" scope="col">Transportation</th>
                                 <th class="text-muted" scope="col">Date Distributed</th>
                                 <th class="text-muted" scope="col">Status</th>
                                 <th class="text-muted" scope="col">Action</th>
@@ -40,6 +42,8 @@
                         @foreach($data as $x)
                             <tr>
                                 <th scope="row">{{ $x->id }}</th> 
+                                <th scope="row">{{ App\Models\Distribution::find($x->distribution_id)->requestor_name }}</th>
+                                <th scope="row">{{ App\Models\Transportation::find($x->transportation_id)->driver_name }}</th>
                                 <th scope="row">{{ $x->date_distributed }}</th>  
                                 <th scope="row">{{ $x->status }}</th>   
                           

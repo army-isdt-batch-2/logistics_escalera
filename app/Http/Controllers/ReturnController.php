@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Returns;
+use App\Models\Asset;
 use Redirect;
 
 class ReturnController extends Controller
@@ -36,7 +37,9 @@ class ReturnController extends Controller
     }
     public function create()
     {
-       return view('create_form.return');                
+       return view('create_form.return')->with([
+           'data' => Asset::all()
+       ]);                
 
     }
 

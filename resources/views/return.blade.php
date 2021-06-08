@@ -30,6 +30,7 @@
                         <thead>
                             <tr>
                                 <th class="text-muted" scope="col">#</th>
+                                <th class="text-muted" scope="col">Asset</th>
                                 <th class="text-muted" scope="col">Returned by</th>
                                 <th class="text-muted" scope="col">Returned by Contact</th>
                                 <th class="text-muted" scope="col">Quantity</th>
@@ -41,6 +42,7 @@
                         @foreach($data as $x)
                             <tr>
                                 <th scope="row">{{ $x->id }}</th> 
+                                <th scope="row">{{ App\Models\Asset::find($x->asset_id)->name }}</th>  
                                 <th scope="row">{{ $x->returned_by }}</th>  
                                 <th scope="row">{{ $x->returned_by_contact }}</th>   
                                 <th scope="row">{{ $x->quantity }}</th>  

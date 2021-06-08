@@ -24,12 +24,12 @@
 
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Returned by</label>
-                            <input type="text" class="form-control" name="returned_by" value="{{ $data->request_by }}" required>
+                            <input type="text" class="form-control" name="returned_by" value="{{ $data->returned_by }}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Returned by Contact</label>
-                            <input type="text" class="form-control" name="returned_by_contact" required>
+                            <input type="text" class="form-control" name="returned_by_contact" value="{{ $data->returned_by_contact }}"  required>
                         </div>
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Quantity</label>

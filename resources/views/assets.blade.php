@@ -33,6 +33,8 @@
                                 <th class="text-muted" scope="col">Name</th>
                                 <th class="text-muted" scope="col">Description</th>
                                 <th class="text-muted" scope="col">Category</th>
+                                <th class="text-muted" scope="col">Suppplier</th>
+                                <th class="text-muted" scope="col">Storage</th>
                                 <th class="text-muted" scope="col">Total Stocks</th>
                                 <th class="text-muted" scope="col">Action</th>
                             </tr>
@@ -43,7 +45,12 @@
                                     <th scope="row">{{ $x->id }}</th> 
                                     <th scope="row">{{ $x->name }}</th>  
                                     <th scope="row">{{ $x->description }}</th>   
-                                    <th scope="row">{{ $x->category }}</th>  
+                                    <th scope="row">{{ $x->category }}</th> 
+                              
+                                    <th scope="row">{{ App\Models\Supplier::find($x->supplier_id)->name }}</th> 
+                                    <th scope="row">{{ App\Models\Storage::find($x->storage_id)->name }}</th>  
+                                     
+                                     
                                     <th scope="row">{{ $x->total_stocks }}</th>  
                                 
                                     <th scope="row">

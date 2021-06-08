@@ -19,31 +19,44 @@
                 <div class="col-12">
                     <form action="{{ URL::route('deliveries.create.save') }}" method="post" class="row g-3">
                         @csrf
-                      
-                            <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Distribution ID</label>
-                                <input type="number" class="form-control" name="distribution_id" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Transportion ID</label>
-                                <input type="number" class="form-control" name="transportation_id" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Date Distributed</label>
-                                <input type="date" class="form-control" name="date_distributed" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputState" class="form-label">Status</label>
-                                <select class="form-control" name="status" required>
 
-                                    <option>delivered</option>
-                                    <option>returned</option>
-                                  
-                                </select>
-                            </div>
-                            
-    
-                        
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Distribution ID</label>
+                            <label for="inputState" class="form-label"></label>
+                            <select class="form-control" name="distribution_id" required>
+
+                                @foreach($distribution as $x)
+                                <option value="{{ $x->id }}">{{ $x->requestor_name }}</option>
+                                @endforeach
+                             </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Transportion ID</label>
+                            <label for="inputState" class="form-label"></label>
+                            <select class="form-control" name="transportation_id" required>
+
+                                @foreach($transportation as $x)
+                                <option value="{{ $x->id }}">{{ $x->driver_name }}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Date Distributed</label>
+                            <input type="date" class="form-control" name="date_distributed" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputState" class="form-label">Status</label>
+                            <select class="form-control" name="status" required>
+
+                                <option>delivered</option>
+                                <option>returned</option>
+
+                            </select>
+                        </div>
+
+
+
 
                         <div class="col-12">
                             <button type="submit" class="btn btn-dark">Save</button>

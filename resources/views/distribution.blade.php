@@ -33,6 +33,7 @@
                                 <th class="text-muted" scope="col">Requestor Name</th>
                                 <th class="text-muted" scope="col">Requestor Contact</th>
                                 <th class="text-muted" scope="col">Purpose</th>
+                                <th class="text-muted" scope="col">Asset</th>
                                 <th class="text-muted" scope="col">Quantity</th>
                                 <th class="text-muted" scope="col">Status</th>
                                 <th class="text-muted" scope="col">Action</th>
@@ -45,6 +46,7 @@
                                 <th scope="row">{{ $x->requestor_name }}</th>  
                                 <th scope="row">{{ $x->requestor_contact }}</th>   
                                 <th scope="row">{{ $x->purpose }}</th>  
+                                <th scope="row">{{ App\Models\Asset::find($x->asset_id)->name }}</th>  
                                 <th scope="row">{{ $x->quantity }}</th>
                                 <th scope="row">{{ $x->status }}</th>    
                                

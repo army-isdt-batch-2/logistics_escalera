@@ -48,11 +48,25 @@
                         </div>
                         <div class="col-md-4">
                                 <label for="inputPassword4" class="form-label">Supplier ID</label>
-                                <input type="number" class="form-control" name="supplier_id" required>
+                                <label for="inputState" class="form-label">Status</label>
+                                <select class="form-control" name="supplier_id" required>
+
+                                    @foreach($supplier as $x)
+                                        <option value="{{ $x->id }}">{{ $x->name }}</option> 
+                                    @endforeach
+                                  
+                                </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="inputPassword4" class="form-label">Storage ID</label>
-                                <input type="number" class="form-control" name="storage_id" required>
+                                <label for="inputState" class="form-label">Status</label>
+                                <select class="form-control" name="storage_id" required>
+
+                                    @foreach($storage as $x)
+                                        <option value="{{ $x->id }}">{{ $x->name }}</option> 
+                                    @endforeach
+                                  
+                                </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="inputPassword4" class="form-label">Total Stocks</label>

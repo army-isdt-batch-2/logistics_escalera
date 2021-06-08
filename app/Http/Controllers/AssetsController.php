@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Asset;
+use App\Models\Supplier;
+use App\Models\Storage;
 use Redirect;
 
 class AssetsController extends Controller
@@ -36,7 +38,10 @@ class AssetsController extends Controller
     }
     public function create()
     {
-       return view('create_form.assets');                
+       return view('create_form.assets')->with([
+           'supplier' => Supplier::all(), 
+           'storage' => Storage::all()
+       ]);                
 
     }
 
