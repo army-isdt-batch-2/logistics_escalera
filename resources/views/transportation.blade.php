@@ -37,7 +37,9 @@
                         </thead>
                         <tbody>
 
+   
 
+   
                         @foreach($data as $x)
                             <tr>
                                 <th scope="row">{{ $x->id }}</th> 
