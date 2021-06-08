@@ -37,6 +37,7 @@
                         </thead>
                         <tbody>
 
+
                         @foreach($data as $x)
                             <tr>
                                 <th scope="row">{{ $x->id }}</th> 
@@ -53,7 +54,7 @@
                                     </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li><a class="dropdown-item" href="{{ URL::route('transportation.update' , $x->id) }}">Update</a></li>
-                                            
+                                                    <li><a class="dropdown-item" href="{{ URL::route('transportation.delete' , $x->id) }}">Delete</a></li>
                                                 
                                             </ul>
                                 

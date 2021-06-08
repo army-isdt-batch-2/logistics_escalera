@@ -58,7 +58,7 @@
                                     </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li><a class="dropdown-item" href="{{ URL::route('storage.update' , $x->id) }}">Update</a></li>
-                                            
+                                                    <li><a class="dropdown-item" href="{{ URL::route('storage.delete' , $x->id) }}">Delete</a></li>
                                                 
                                             </ul>
                                 
