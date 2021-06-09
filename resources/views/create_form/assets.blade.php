@@ -47,7 +47,7 @@
 
                         </div>
                         <div class="col-md-4">
-                                <label for="inputPassword4" class="form-label">Supplier ID</label>
+                                <label for="inputPassword4" class="form-label"> SupplierID</label>
                                 <label for="inputState" class="form-label">Status</label>
                                 <select class="form-control" name="supplier_id" required>
 

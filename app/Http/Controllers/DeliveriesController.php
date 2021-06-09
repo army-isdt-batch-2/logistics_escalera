@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Delivery;
 use App\Models\Distribution;
 use App\Models\Transportation;
+use App\Models\Asset;
 use Redirect;
 
 class DeliveriesController extends Controller
@@ -27,12 +28,24 @@ class DeliveriesController extends Controller
 
     public function save()
     {
-        // save to database
+        $status =  $this->request->get('status');
+        $distrib =  $this->request->get('distribution_id');
+        $quantity = Distribution::where('id',$distrib)->value('quantity');
+        $asset = Distribution::where('id',$distrib)->value('asset_id');
+       
+    
         Delivery::create(
             //query - get all data
             $this->request->except('_token')
 
         );
+
+        if($status=='returned')
+        {
+            Asset::find($asset)->increment('total_stocks',$quantity);
+        }
+
+        
 
         return Redirect::route('deliveries');
     }
@@ -53,10 +66,19 @@ class DeliveriesController extends Controller
     }
     public function update_save ($id)
     {
+        $status =  $this->request->get('status');
+        $distrib =  $this->request->get('distribution_id');
+        $quantity = Distribution::where('id',$distrib)->value('quantity');
+        $asset = Distribution::where('id',$distrib)->value('asset_id');
+
         Delivery::find($id)->update(
             $this->request->except('_token')
 
         );
+        if($status=='returned')
+        {
+            Asset::find($asset)->increment('total_stocks',$quantity);
+        }
         return Redirect::route('deliveries');
     }
 

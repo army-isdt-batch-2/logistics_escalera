@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Returns;
 use App\Models\Asset;
+use App\Models\Distribution;
+
 use Redirect;
 
 class ReturnController extends Controller
@@ -26,7 +28,7 @@ class ReturnController extends Controller
 
     public function save()
     {
-        // save to database
+        
         Returns::create(
             //query - get all data
             $this->request->except('_token')

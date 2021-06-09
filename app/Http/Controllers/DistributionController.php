@@ -26,14 +26,27 @@ class DistributionController extends Controller
     }
 
     public function save()
-    {
+    {   
+        $asset = $this->request->get('asset_id');
+        $quantity =$this->request->get('quantity');
+        $status =$this->request->get('status');
+
         // save to database
         Distribution::create(
+
+           
             //query - get all data
             $this->request->except('_token')
 
         );
 
+        if($status=='distributed')
+        {
+            Asset::find($asset)->decrement('total_stocks',$quantity);
+     
+        }
+        //dd($data3);
+       
         return Redirect::route('distribution');
     }
     public function create()
@@ -46,16 +59,28 @@ class DistributionController extends Controller
 
     public function update ($id)
     {
+
         return view('update_form.distribution')->with([
             'data' =>Distribution::find($id)
         ]);
     }
     public function update_save ($id)
     {
+        $asset = $this->request->get('asset_id');
+        $quantity =$this->request->get('quantity');
+        $status =$this->request->get('status');
+
         Distribution::find($id)->update(
             $this->request->except('_token')
 
         );
+
+        if($status=='distributed')
+        {
+            Asset::find($asset)->decrement('total_stocks',$quantity);
+     
+        }
+
         return Redirect::route('distribution');
     }
 
