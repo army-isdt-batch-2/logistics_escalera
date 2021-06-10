@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a href="{{ URL::route('app') }}"class="navbar-brand" href="#">Logistics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -50,7 +50,7 @@
                 </ul>
                 <form class="d-flex">
                     <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <a class="btn btn-outline-dark" href="{{ URL::route('logout') }}" type="submit">Logout</a>
+                    <a class="btn btn-outline-light" href="{{ URL::route('logout') }}" type="submit">Logout</a>
                 </form>
             </div>
         </div>
