@@ -16,10 +16,42 @@
 </head>
 
 <body>
+    @php $active = "" @endphp
     @include('components.navbar')
     <div style="margin-top: -1.5%;" class="row">
         @yield('content')     
     </div>
+
+    <style> 
+
+::-webkit-scrollbar{
+    display: none;
+}
+.content{
+    overflow-x: hidden;
+    overflow-y: scroll;
+} 
+
+header{
+    position:fixed;
+    left:0; 
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.sidebar{
+    position:fixed;
+    left:0; 
+    top: 12.5% !important;
+    height: 100%;
+    padding-left:0 !important
+}
+.content{
+    margin-top: 7%;
+    
+    padding-bottom: 5%;
+}
+</style>
 
     
     

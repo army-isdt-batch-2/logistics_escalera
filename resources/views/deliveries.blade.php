@@ -1,4 +1,4 @@
-<!-- @php $active = 'department' @endphp -->
+@php $active = 'deliveries' @endphp
 @extends('layout.main')
 @section('title','Deliveries')
 @section('content')

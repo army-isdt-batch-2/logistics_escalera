@@ -35,7 +35,7 @@
                             <div class="col-md-6">
                                 <label for="inputState" class="form-label">Status</label>
                                 <select class="form-control" name="status" value="{{ $data->status }}" required>
-
+                                    
                                     <option>delivered</option>
                                     <option>returned</option>
                                   

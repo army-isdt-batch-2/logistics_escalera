@@ -2,6 +2,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+Route::group(['middleware' => 'user'], function(){
 
 Route::get('/deliveries', [
     App\Http\Controllers\DeliveriesController::class,
@@ -35,3 +36,5 @@ Route::get('/deliveries/update/{id}',[
     'delete'
     
  ])->name('deliveries.delete');
+
+ });

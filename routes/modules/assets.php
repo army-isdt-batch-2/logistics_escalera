@@ -3,6 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::group(['middleware' => 'user'], function(){
+
 Route::get('/assets', [
     App\Http\Controllers\AssetsController::class,
     'index'
@@ -38,4 +40,4 @@ Route::get('assets/update/{id}',[
     
  ])->name('assets.delete');
 
-
+});

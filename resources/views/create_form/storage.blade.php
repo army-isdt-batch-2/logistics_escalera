@@ -1,4 +1,4 @@
-<!-- @php $active = 'employees' @endphp -->
+@php $active = 'storage' @endphp
 @extends('layout.main')
 @section('title','Create Storage')
 @section('content')
