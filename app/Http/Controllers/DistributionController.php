@@ -65,19 +65,15 @@ class DistributionController extends Controller
         ]);
     }
     public function update_save ($id)
-    {
-        $asset = $this->request->get('asset_id');
-        $quantity =$this->request->get('quantity');
-        $status =$this->request->get('status');
-
+    { 
         Distribution::find($id)->update(
             $this->request->except('_token')
 
         );
 
-        if($status=='distributed')
+        if($this->request->get('status')=='distributed')
         {
-            Asset::find($asset)->decrement('total_stocks',$quantity);
+            Asset::find($this->request->get('asset_id'))->decrement('total_stocks', $this->request->get('quantity'));
      
         }
 

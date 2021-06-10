@@ -68,8 +68,9 @@ class DeliveriesController extends Controller
     {
         $status =  $this->request->get('status');
         $distrib =  $this->request->get('distribution_id');
-        $quantity = Distribution::where('id',$distrib)->value('quantity');
-        $asset = Distribution::where('id',$distrib)->value('asset_id');
+        $db = Distribution::where('id',$distrib)->pluck('quantity','asset_id');
+        $quantity = $db->quantity;
+        $asset = $db->asset_id;
 
         Delivery::find($id)->update(
             $this->request->except('_token')
