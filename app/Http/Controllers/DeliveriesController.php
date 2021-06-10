@@ -68,7 +68,8 @@ class DeliveriesController extends Controller
     {
         $status =  $this->request->get('status');
         $distrib =  $this->request->get('distribution_id');
-        $db = Distribution::where('id',$distrib)->pluck('quantity','asset_id');
+        $db = Distribution::find($distrib);
+       
         $quantity = $db->quantity;
         $asset = $db->asset_id;
 
